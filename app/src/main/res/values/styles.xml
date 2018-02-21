@@ -1,0 +1,5 @@
+<resources>
+    <style name="ToolbarBackArrowColor">
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+</resources>

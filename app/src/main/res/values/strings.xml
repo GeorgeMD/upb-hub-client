@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UPB@Hub</string>
+    <string name="sharedPreferencesKey">com.example.georged.upborar.localstoragekey</string>
+
+    <string name="login">Login</string>
+    <string name="sign_up">No account yet? Create one!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="invalid_email_password_combination">Invalid email/password combination!</string>
+    <string name="title_activity_improved_main">ImprovedMainActivity</string>
+
+    <string name="openDrawer">Open navigation drawer</string>
+    <string name="closeDrawer">Close navigation drawer</string>
+    <string name="schedule">Schedule</string>
+    <string name="account">Account</string>
+    <string name="log_out">Log out</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum.</string>
+    <string name="free_day">No school is best school!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
