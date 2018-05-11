@@ -2,7 +2,8 @@
 
 What it does:
   - it shows the schedule
-  - it asks you to login, but you can't create an account (this is a feature from the very first versiom of this app. It will be removed in the next update)  
+  - it asks you to login, but you can't create an account (this is a feature from the very first versiom of this app. It will be removed in the next update)
+
 What it will do (hopefully):
   - let users add schedules
   - show courses you are enrolled in on cs.curs (will need your cs.curs account, but it won't save it outside your phone)
