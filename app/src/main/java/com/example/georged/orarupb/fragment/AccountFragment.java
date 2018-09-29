@@ -66,7 +66,8 @@ public class AccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().findViewById(R.id.spin_semigroup).setVisibility(View.GONE);
+//        getActivity().findViewById(R.id.spin_semigroup).setVisibility(View.GONE);
+        getActivity().findViewById(R.id.btn_semigroup).setVisibility(View.GONE);
         return inflater.inflate(R.layout.fragment_account, container, false);
     }
 

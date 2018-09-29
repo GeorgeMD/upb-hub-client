@@ -12,9 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.Button;
 
 import com.example.georged.orarupb.R;
 import com.example.georged.orarupb.utils.Day;
@@ -68,8 +66,8 @@ public class ScheduleMainFragment extends Fragment {
         setHasOptionsMenu(true);
         ButterKnife.bind(this, view);
 
-        getActivity().findViewById(R.id.spin_semigroup).setVisibility(View.VISIBLE);
-
+//        getActivity().findViewById(R.id.spin_semigroup).setVisibility(View.VISIBLE);
+        getActivity().findViewById(R.id.btn_semigroup).setVisibility(View.VISIBLE);
         return view;
     }
 
@@ -124,19 +122,54 @@ public class ScheduleMainFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Spinner spinSemigroup = getActivity().findViewById(R.id.spin_semigroup);
+//        Spinner spinSemigroup = getActivity().findViewById(R.id.spin_semigroup);
+//
+//        ArrayAdapter<String> adapterSemigroup = new ArrayAdapter<>(getActivity(),
+//                android.R.layout.simple_spinner_item,
+//                new String[]{"Semigroup 1", "Semigroup 2"});
+//        adapterSemigroup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spinSemigroup.setAdapter(adapterSemigroup);
+//
+//        spinSemigroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+//                int semigroup = pos + 1;
+//                int currPos = _contentPager.getCurrentItem();
+//
+//                // update selected day
+//                ((ScheduleFragment) scheduleFragAdapter.instantiateItem(_contentPager, currPos))
+//                        .updateScheduleTable(semigroup);
+//                // update left neighbour if it exists
+//                if (currPos > 0) {
+//                    ((ScheduleFragment) scheduleFragAdapter.instantiateItem(_contentPager, currPos - 1))
+//                            .updateScheduleTable(semigroup);
+//                }
+//                // update right neighbour if it exists
+//                if (currPos < 6) {
+//                    ((ScheduleFragment) scheduleFragAdapter.instantiateItem(_contentPager, currPos + 1))
+//                            .updateScheduleTable(semigroup);
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
-        ArrayAdapter<String> adapterSemigroup = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_spinner_item,
-                new String[]{"Semigroup 1", "Semigroup 2"});
-        adapterSemigroup.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinSemigroup.setAdapter(adapterSemigroup);
-
-        spinSemigroup.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Button btn = getActivity().findViewById(R.id.btn_semigroup);
+        btn.setText("Semigroup 1");
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                int semigroup = pos + 1;
+            public void onClick(View v) {
+                int semigroup;
+                if (((Button) v).getText().equals("Semigroup 1")) {
+                    semigroup = 2;
+                } else {
+                    semigroup = 1;
+                }
+
                 int currPos = _contentPager.getCurrentItem();
 
                 // update selected day
@@ -152,14 +185,9 @@ public class ScheduleMainFragment extends Fragment {
                     ((ScheduleFragment) scheduleFragAdapter.instantiateItem(_contentPager, currPos + 1))
                             .updateScheduleTable(semigroup);
                 }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+                ((Button) v).setText("Semigroup " + semigroup);
             }
         });
-
         super.onCreateOptionsMenu(menu, inflater);
     }
 

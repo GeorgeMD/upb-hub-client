@@ -8,9 +8,11 @@
     android:minHeight="?attr/actionBarSize"
     app:theme="@style/Widget.AppCompat.DrawerArrowToggle"
     android:background="?attr/colorPrimary">
-    <Spinner
-        android:id="@+id/spin_semigroup"
+    <Button
+        android:id="@+id/btn_semigroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"/>
+        android:text="Semigroup 1"
+        android:backgroundTint="@color/primaryColor"
+        android:layout_gravity="end" />
 </android.support.v7.widget.Toolbar>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_schedule_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.georged.orarupb.fragment.ScheduleImprovedFragment"
+    android:gravity="center"
+    android:animateLayoutChanges="true">
+
+    <GridLayout
+        android:id="@+id/grid_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <Spinner
+            android:id="@+id/spin_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:backgroundTint="@android:color/holo_blue_light"/>
+        <Spinner
+            android:id="@+id/spin_series"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:backgroundTint="@android:color/holo_blue_light"/>
+        <Spinner
+            android:id="@+id/spin_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/Widget.Material.Spinner.Underlined"
+            android:backgroundTint="@android:color/holo_blue_light"/>
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_schedule"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_courses"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+        <TextView
+            android:id="@+id/empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

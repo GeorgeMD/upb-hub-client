@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -29,8 +30,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ScheduleFragment extends Fragment
-        implements LoaderManager.LoaderCallbacks<Cursor> {
+public class ScheduleFragment extends Fragment {
 
     private Student student;
     private Day day;
@@ -70,7 +70,9 @@ public class ScheduleFragment extends Fragment
 
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
         ButterKnife.bind(this, view);
-        Spinner spinSemigroup = getActivity().findViewById(R.id.spin_semigroup);
+//        Spinner spinSemigroup = getActivity().findViewById(R.id.spin_semigroup);
+
+        Button btnSemigroup = getActivity().findViewById(R.id.btn_semigroup);
 
         if (getArguments() != null) {
             day = (Day) getArguments().getSerializable(DAY_KEY);
@@ -83,8 +85,10 @@ public class ScheduleFragment extends Fragment
         }
 
         setupScheduleTable();
-        updateScheduleTable(spinSemigroup.getSelectedItemPosition() + 1);
+//        updateScheduleTable(spinSemigroup.getSelectedItemPosition() + 1);
 
+        int i = ((int) btnSemigroup.getText().charAt(btnSemigroup.getText().length() - 1)) - 48;
+        updateScheduleTable(i);
         return view;
     }
 
@@ -130,21 +134,6 @@ public class ScheduleFragment extends Fragment
                 updateScheduleTable(param);
             }
         });
-    }
-
-    @Override
-    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        return null;
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-
     }
 
     // TODO: CACHE ARRAY LIST OF SCHEDULES

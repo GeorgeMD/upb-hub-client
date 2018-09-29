@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class ScheduleListAdapter extends RecyclerView.Adapter<ScheduleViewHolder> {
 
-    ArrayList<Schedule> schedules;
+    private ArrayList<Schedule> schedules;
 
     @Override
     public ScheduleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

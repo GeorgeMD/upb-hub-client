@@ -5,7 +5,7 @@ package com.example.georged.orarupb.utils;
  */
 
 public final class Constants {
-    public final static String API_URL = "HOSTNAME";
+    public final static String API_URL = "http://dellserver.go.ro:8080/api/";
     public final static String API_ERR = "apiError";
     public final static String APP_ERR = "appError";
 }

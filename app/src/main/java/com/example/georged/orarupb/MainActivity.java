@@ -21,13 +21,11 @@ import android.widget.Toast;
 
 import com.example.georged.orarupb.base.BaseActivity;
 import com.example.georged.orarupb.fragment.AccountFragment;
-import com.example.georged.orarupb.fragment.ScheduleFragment;
+import com.example.georged.orarupb.fragment.ScheduleImprovedFragment;
 import com.example.georged.orarupb.fragment.ScheduleMainFragment;
 import com.example.georged.orarupb.webApiClient.models.Student;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -43,6 +41,7 @@ public class MainActivity extends BaseActivity {
 
     private static final String TAG_SCHEDULE = "Schedule";
     private static final String TAG_ACCOUNT = "Account";
+    private static final String TAG_NEW_SCHEDULE = "NewSchedule";
     private static String CURRENT_TAG = TAG_SCHEDULE;
 
     private ActionBarDrawerToggle drawerToggle;
@@ -161,6 +160,14 @@ public class MainActivity extends BaseActivity {
             case R.id.nav_logout:
                 logout();
                 return;
+            case R.id.nav_improv_schedule:
+                if (CURRENT_TAG.equals(TAG_NEW_SCHEDULE)) {
+                    return;
+                }
+                fragment = new ScheduleImprovedFragment();
+                tag = TAG_NEW_SCHEDULE;
+                setTitle("Yada yada yada");
+                break;
             default:
                 if (CURRENT_TAG.equals(TAG_SCHEDULE)) {
                     return;
